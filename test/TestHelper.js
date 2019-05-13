@@ -5,6 +5,7 @@ import {
 } from './helper';
 
 insertCSS('diagram-js.css', require('diagram-js/assets/diagram-js.css'));
+insertCSS('colors', require('./colors.css'));
 
 insertCSS('bpmn-embedded.css', require('bpmn-font/dist/css/bpmn-embedded.css'));
 

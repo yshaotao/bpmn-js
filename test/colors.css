@@ -1,0 +1,229 @@
+/* colors taken from https://github.com/camunda/camunda-operate/blob/master/client/src/modules/theme/colors.js */
+
+:root {
+  --default-color: #4d90ff;
+  --success-color: #10d070;
+  --warning-color: #ffa533;
+  --error-color: #ff3d3d;
+}
+
+/* Move Preview */
+.djs-dragger * {
+  fill: none !important;
+  stroke: var(--default-color) !important;
+}
+
+marker.djs-dragger circle,
+marker.djs-dragger path,
+marker.djs-dragger polygon,
+marker.djs-dragger polyline,
+marker.djs-dragger rect,
+marker.djs-dragger text {
+  fill: var(--default-color) !important;
+  stroke: none !important;
+}
+
+/* Snapping */
+.djs-snap-line {
+  fill: none !important;
+  stroke: var(--warning-color) !important;
+  stroke-width: 1px !important;
+}
+
+/* Space Tool */
+.djs-crosshair {
+  stroke: var(--warning-color) !important;
+  stroke-dasharray: none;
+}
+
+/* Lasso Tool */
+.djs-lasso-overlay {
+  fill: var(--warning-color);
+  fill-opacity: 0.1;
+
+  stroke-dasharray: 3 3 6 3;
+  stroke: var(--warning-color);
+
+  shape-rendering: crispEdges;
+  pointer-events: none;
+}
+
+/* Palette */
+.djs-palette .group[data-group=tools] .entry:hover {
+  color: var(--warning-color) !important;
+}
+
+.djs-palette .group:not([data-group=tools]) .entry:hover {
+  color: var(--default-color) !important;
+}
+
+.djs-palette .highlighted-entry {
+  color: var(--default-color) !important;
+}
+
+/* Bendpoints */
+.djs-segment-dragger .djs-visual {
+  fill: var(--warning-color) !important;
+  stroke: var(--warning-color) !important;
+  stroke-opacity: 0.5 !important;
+  stroke-width: 2px;
+}
+
+.djs-bendpoint .djs-visual {
+  fill: var(--warning-color) !important;
+  stroke: var(--warning-color) !important;
+  stroke-opacity: 0.5 !important;
+  stroke-width: 2px;
+}
+
+.djs-segment-dragger:hover .djs-visual,
+.djs-segment-dragger.djs-dragging .djs-visual,
+.djs-bendpoint:hover .djs-visual,
+.djs-bendpoint.floating .djs-visual {
+  fill: var(--warning-color) !important;
+  stroke: var(--warning-color) !important;
+  stroke-opacity: 0.5 !important;
+  stroke-width: 2px;
+}
+
+.djs-segment-dragger.djs-dragging .djs-visual,
+.djs-bendpoint.djs-dragging .djs-visual {
+  fill: var(--warning-color) !important;
+  stroke-opacity: 0.5 !important;
+  stroke-width: 2px;
+}
+
+/* Outline */
+.djs-element.selected .djs-outline {
+  stroke: var(--default-color) !important;
+  stroke-opacity: 0.5 !important;
+  stroke-width: 1px !important;
+}
+
+.djs-element.hover .djs-outline,
+.djs-element.selected.hover .djs-outline {
+  stroke: var(--default-color) !important;
+  stroke-opacity: 1 !important;
+  stroke-width: 1px !important;
+}
+
+/* Connect, Create, Move */
+.djs-shape.connect-ok .djs-visual > :nth-child(1) {
+  fill: none !important;
+  stroke: var(--success-color) !important;
+  stroke-width: 4px !important;
+}
+
+.djs-shape.connect-not-ok .djs-visual > :nth-child(1),
+.djs-shape.drop-not-ok .djs-visual > :nth-child(1) {
+  fill: none !important;
+  stroke: var(--error-color) !important;
+  stroke-width: 4px !important;
+}
+
+.djs-shape.new-parent .djs-visual > :nth-child(1) {
+  fill: none !important;
+}
+
+svg.drop-not-ok {
+  background: none !important;
+}
+
+svg.new-parent {
+  background: none !important;
+}
+
+.djs-connection.connect-ok .djs-visual > :nth-child(1),
+.djs-connection.drop-ok .djs-visual > :nth-child(1) {
+  stroke: var(--success-color) !important;
+  stroke-width: 4px !important;
+}
+
+.djs-connection.connect-not-ok .djs-visual > :nth-child(1),
+.djs-connection.drop-not-ok .djs-visual > :nth-child(1) {
+  stroke: var(--error-color) !important;
+  stroke-width: 4px !important;
+}
+
+.djs-element.attach-ok .djs-visual > :nth-child(1) {
+  stroke: var(--success-color) !important;
+  stroke-width: 4px !important;
+}
+
+.djs-frame.connect-not-ok .djs-visual > :nth-child(1),
+.djs-frame.drop-not-ok .djs-visual > :nth-child(1) {
+  fill: none !important;
+  stroke: var(--error-color) !important;
+  stroke-width: 4px !important;
+}
+
+/* Resize */
+.djs-resize-overlay {
+  fill: none;
+  stroke: var(--default-color);
+  stroke-dasharray: 3 3 6 3;
+}
+
+.djs-resizer-visual {
+  fill: var(--default-color);
+  shape-rendering: auto;
+  stroke: var(--default-color);
+  stroke-opacity: 0.5;
+  stroke-width: 2px;
+}
+
+/* Tooltips */
+.djs-tooltip-error {
+  font-family: 'Arial', sans-serif;
+  font-size: 12px;
+}
+
+.djs-tooltip-error > * {
+  background-color: rgba(255, 255, 255, 0.5);
+  color: var(--error-color);
+  padding: 10px;
+  border-radius: 2px;
+  border-left: none;
+  border: solid 1px var(--error-color);
+  opacity: 0.9;
+}
+
+.djs-tooltip-error:hover {
+  opacity: 1;
+}
+
+/* Context Pad */
+.djs-context-pad {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 2px;
+  padding: 2px;
+}
+
+.djs-context-pad .entry {
+  border-radius: 0;
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.djs-context-pad .entry:hover {
+  background: transparent !important;
+  color: var(--default-color) !important;
+}
+
+.djs-context-pad .entry.tool:hover {
+  color: var(--warning-color) !important;
+}
+
+/* Popup */
+.djs-popup .entry {
+  font-family: 'Arial', sans-serif;
+}
+
+.djs-popup .entry:hover {
+  background: transparent;
+  color: var(--default-color);
+}
+
+.djs-popup .entry.tool:hover {
+  color: var(--warning-color);
+}
