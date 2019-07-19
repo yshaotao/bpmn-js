@@ -260,12 +260,20 @@ describe('features/modeling/behavior - fix hover', function() {
 
           // given
           var participant_lanes = elementRegistry.get('Participant_Lanes');
+          var participant_no_lanes = elementRegistry.get('Participant_No_Lanes');
+
           var lane_1 = elementRegistry.get('Lane_1');
 
           var messageFlow = elementRegistry.get('MessageFlow_2');
 
           var connectSpy = spy(function(event) {
-            expect(event.context.target).to.eql(participant_lanes);
+            var context = event.context;
+
+            var source = context.source,
+                target = context.target;
+
+            expect(source).to.eql(participant_lanes);
+            expect(target).to.eql(participant_no_lanes);
           });
 
           eventBus.once('bendpoint.move.end', connectSpy);
@@ -315,7 +323,7 @@ describe('features/modeling/behavior - fix hover', function() {
 
     describe('connect', function() {
 
-      it('should set start to participant', inject(
+      it.only('should set start to participant', inject(
         function(connect, dragging, elementRegistry, eventBus) {
 
           // given
@@ -326,9 +334,11 @@ describe('features/modeling/behavior - fix hover', function() {
           var connectSpy = spy(function(event) {
 
             var context = event.context,
-                source = context.source;
+                source = context.source,
+                target = context.target;
 
             expect(source).to.eql(participant_lanes);
+            expect(target).to.eql(participant_no_lanes);
           });
 
           eventBus.once('connect.end', connectSpy);
